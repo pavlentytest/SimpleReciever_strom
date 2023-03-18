@@ -8,12 +8,14 @@ import android.widget.Toast
 class MyReceiver : BroadcastReceiver() {
 
     override fun onReceive(context: Context, intent: Intent) {
-        val airFlag = intent.getBooleanExtra("state", false)
+      /*  val airFlag = intent.getBooleanExtra("state", false)
         if(airFlag) {
             Toast.makeText(context, "Air mode is ON!", Toast.LENGTH_LONG).show()
         } else {
             Toast.makeText(context, "Air mode is OFF!", Toast.LENGTH_LONG).show()
         }
-
+        */
+        val message = intent.getStringExtra("message")
+        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
     }
 }

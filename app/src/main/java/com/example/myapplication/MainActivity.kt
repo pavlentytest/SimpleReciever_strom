@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         receiver = MyReceiver()
 
-        IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
+        val filter = IntentFilter("com.example.sender.POST")
+        registerReceiver(receiver, filter)
+
+     /*   IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED).also {
             registerReceiver(receiver, it)
         }
-
+*/
     }
 
-    override fun onStop() {
-        super.onStop()
-        unregisterReceiver(receiver)
-    }
+
 }
